@@ -1,43 +1,40 @@
+/*****************************************************************************************
+ * Author:				Khalid A. Mohamad
+ * Creation Data:		01 May, 2023
+ * Version:				v1.0
+ * Compiler:			GNU ARM-GCC
+ * Controller:			STM32F401CCU6 (32-bit Architecture)
+ * Processor:			Cortex M4 (32-bit Architecture)
+ * Layer:				MCAL Layer
+ *****************************************************************************************/
+/*****************************************************************************************
+ * Version	  Date				  Author				  Description
+ * v2.0		  26 May, 2023	Khalid A. Mohamad		  Initial Creation
+ *****************************************************************************************/
 
 #ifndef GPIO_PRIVATE
 #define GPIO_PRIVATE
 
 typedef struct
 {
-    volatile u32 GPIOx_MODER;
-    volatile u32 GPIOx_OTYPER;
-    volatile u32 GPIOx_OSPEEDR;
-    volatile u32 GPIOx_PUPDR;
-    volatile u32 GPIOx_IDR;
-    volatile u32 GPIOx_ODR;
-    volatile u32 GPIOx_BSRR;
-    volatile u32 GPIOx_LCKR;
-    volatile u32 GPIOx_AFRL;
-    volatile u32 GPIOx_AFRH;
+    volatile u32 MODER;
+    volatile u32 OTYPER;
+    volatile u32 OSPEEDR;
+    volatile u32 PUPDR;
+    volatile u32 IDR;
+    volatile u32 ODR;
+    volatile u32 BSRR;
+    volatile u32 LCKR;
+    volatile u32 AFRL;
+    volatile u32 AFRH;
 }GPIO_t;
 
-#define GPIOA_REG           ((volatile GPIO_t *)0x40020000)
-#define GPIOB_REG           ((volatile GPIO_t *)0x40020400)
-#define GPIOC_REG           ((volatile GPIO_t *)0x40020800)
+#define GPIOA           ((volatile GPIO_t *)0x40020000)     //Base Address of GPIOA
+#define GPIOB           ((volatile GPIO_t *)0x40020400)     //Base Address of GPIOB
+#define GPIOC           ((volatile GPIO_t *)0x40020800)     //Base Address of GPIOC
 
-#define MGPIO_INPUT         0b00
-#define MGPIO_OUTPUT        0b01
-#define MGPIO_AF            0b10
-#define MGPIO_Analog        0b11
+#define PIN_BITS_OFFSET         2
+#define BSRR_PIN_OFFSET         16
 
-#define PUSH_PULL           0
-#define OPEN_DRAIN          1
-
-#define LOW_SPEED           0b00
-#define MEDIUM_SPEED        0b01
-#define HIGH_SPEED          0b10
-#define VERY_SPEED          0b11
-
-#define FLOAT               0b00
-#define PULL_UP             0b01
-#define PULL_DOWN           0b10
-
-#define HIGH                1
-#define LOW                 0
 
 #endif
