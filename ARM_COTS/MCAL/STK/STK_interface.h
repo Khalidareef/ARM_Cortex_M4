@@ -9,11 +9,11 @@
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v1.0		  11 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
 
-#ifndef SYSTICK_INTERFACE_H
-#define SYSTICK_INTERFACE_H
+#ifndef STK_INTERFACE_H
+#define STK_INTERFACE_H
 
 #define MSTK_CLK_AHB                    1
 #define MSTK_CLK_AHB_DIV_BY_8           0
@@ -23,7 +23,7 @@
 
 #define STK_INT_ENABLE                 	1
 #define STK_INT_DISABLE                 0
-      
+
 void MSTK_voidInit(void);
 
 void MSTK_voidSTKMode(u8 Copy_u8Mode);
@@ -34,5 +34,9 @@ u32  MSTK_u32RemainingTime(void);
 void MSTK_voidSetBusyWait(u32 Copy_u32TicksToWait);
 void MSTK_voidSetPreloadVal(u32 Copy_u32LoadVal);
 void MSTK_voidResetSTK(void);
+
+void MSTK_voidSetSingleInterval(u32 Copy_u32Ticks, void(*NotificationFunction) (void));
+void MSTK_voidSetPeriodicInterval(u32 Copy_u32Ticks, void(*NotificationFunction) (void));
+
 
 #endif

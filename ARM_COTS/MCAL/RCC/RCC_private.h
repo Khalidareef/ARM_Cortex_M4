@@ -33,10 +33,6 @@
 #define AHB1LPENR_GPIOCLPEN     2
 
 
-
-
-
-
 typedef struct
 {
     volatile u32 CR;
@@ -84,17 +80,17 @@ typedef struct
 #define RCC_HSE_RC              1
 
 /*prescaller for APB1 & APB2*/
-#define APB1_2_DIVIDE_BY_2		8
-#define APB1_2_DIVIDE_BY_4		9
-#define APB1_2_DIVIDE_BY_8		10
-#define APB1_2_DIVIDE_BY_16		11
+#define APB1_2_DIVIDE_BY_2		0b100
+#define APB1_2_DIVIDE_BY_4		0b101
+#define APB1_2_DIVIDE_BY_8		0b110
+#define APB1_2_DIVIDE_BY_16		0b111
 
 /*prescaller for AHB
   SYSCLK OPTIONS: HSI - HSE - PLL*/
-#define SYSCLK_DEVIDE_BY_2		0
-#define SYSCLK_DEVIDE_BY_4		1
-#define SYSCLK_DEVIDE_BY_8		2
-#define SYSCLK_DEVIDE_BY_16		3
+#define SYSCLK_DEVIDE_BY_2		0b1000
+#define SYSCLK_DEVIDE_BY_4		0b1001
+#define SYSCLK_DEVIDE_BY_8		0b1010
+#define SYSCLK_DEVIDE_BY_16		0b1011
 
 
 

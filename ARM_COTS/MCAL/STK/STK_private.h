@@ -9,11 +9,11 @@
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v1.0		  11 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
 
-#ifndef SYSTICK_PRIVATE_H
-#define SYSTICK_PRIVATE_H
+#ifndef STK_PRIVATE_H
+#define STK_PRIVATE_H
 
 typedef struct
 {
@@ -24,7 +24,7 @@ typedef struct
 
 }STK_t;
 
-#define STK     ((volatile STK_t*)0xE000E010)
+#define     STK     ((volatile STK_t *)0xE000E010)
 
 #define AHB_DEVIDED_BY_8    0
 #define AHB                 1
@@ -36,5 +36,11 @@ typedef struct
 #define CTRL_TICKINT         1
 #define CTRL_CLKSOURCE       2
 #define CTRL_COUNTFLAG       16
+
+#define SINGLE_INTERVAL     0
+#define PERIODIC_INTERVAL   1
+
+#define NULL		0
+
 
 #endif

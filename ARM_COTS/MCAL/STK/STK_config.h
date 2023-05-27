@@ -9,11 +9,11 @@
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v1.0		  11 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
 
-#ifndef SYSTICK_CONFIG_H
-#define SYSTICK_CONFIG_H
+#ifndef STK_CONFIG_H
+#define STK_CONFIG_H
 
  /*Options: AHB_DEVIDED_BY_8
             AHB */
@@ -21,7 +21,7 @@
 
 /*Options:  ENABLE
             DISABLE*/
-#define MSTK_INTERRUPT              ENABLE
+#define MSTK_INTERRUPT              DISABLE
 
 /*Options:  ENABLE
             DISABLE*/
