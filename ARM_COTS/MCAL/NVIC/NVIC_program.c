@@ -55,10 +55,10 @@ void MNVIC_voidClearPendingFlag(u8 Copy_u8PeripheralID)
     MNVIC -> ICPR[Local_u8ISRERIndex] = (1 << (Copy_u8PeripheralID % 32));
 }
 
-u8 MNVIC_u8GetActiveFlag(u8 Copy_u8PeripheralID)
-{
+//u8 MNVIC_u8GetActiveFlag(u8 Copy_u8PeripheralID)
+//{
 
-}
+//}
 
 void MNVIC_voidSetPeripheralPriority(u8 Copy_u8PeripheralID, u8 Copy_u8Priority)
 {

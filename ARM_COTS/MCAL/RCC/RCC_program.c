@@ -69,17 +69,10 @@ void MRCC_voidInit(void)
 #error "RCC CPU_CLK_SOURCE Configuration Error"
 #endif
 
-#if AHB_PRESCASLLER > 15
-	#error "RCC_AHB_PRESCALER Configuration Error"
-#else 
-    RCC -> CFGR &= 0xFFFFFF0F;
-    RCC -> CFGR |= AHB_PRESCASLLER << 4;
+#if AHB_PRESCASLLER == SYSCLK_DEVIDE_BY_2
+    (RCC -> CFGR) &= 0xFFFFFF0F;
+    (RCC -> CFGR ) |= AHB_PRESCASLLER << 4;
 #endif
-
-	//RCC -> CFGR &= 0xFFFFFF0F;
-	//RCC -> CFGR |= (AHB_PRESCASLLER<<4);
-
-
 }
 
 void MRCC_voidEnablePeripheralClock(u8 Copy_u8PerioheralBus, u8 Copy_u8erioheralID)

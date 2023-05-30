@@ -21,11 +21,11 @@
 
 /*Options:  ENABLE
             DISABLE*/
-#define MSTK_INTERRUPT              DISABLE
+#define MSTK_INTERRUPT              ENABLE
 
 /*Options:  ENABLE
             DISABLE*/
-#define MSTK_ENABLE                 ENABLE
+#define MSTK_ENABLE                 DISABLE
 
 
 #endif

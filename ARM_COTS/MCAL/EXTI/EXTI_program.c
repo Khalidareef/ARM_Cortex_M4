@@ -38,7 +38,7 @@ void MEXTI_voidInit(void)
 	CLR_BIT(MEXTI -> FTSR, EXTI_LINE); //Clear The FAlling Edge*/
 	SET_BIT(MEXTI -> RTSR, EXTI_LINE);
 
-#elif EXTI_SENSE_MODE == EXTI_RISING_EDGE
+#elif EXTI_SENSE_MODE == EXTI_FALLING_EDGE
 	CLR_BIT(MEXTI -> RTSR, Copy_u8EXTILine); //Clear The Rissing Edge*/
 	SET_BIT(MEXTI -> FTSR, Copy_u8EXTILine);
 
