@@ -1,6 +1,6 @@
 /*****************************************************************************************
  * Author:				Khalid A. Mohamad
- * Creation Data:		11 May, 2023
+ * Creation Data:		4 Jun, 2023
  * Version:				v1.0
  * Compiler:			GNU ARM-GCC
  * Controller:			STM32F401CCU6 (32-bit Architecture)
@@ -9,23 +9,28 @@
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v1.0		  4 May, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
+#ifndef SPI_PRIVATE_H
+#define SPI_PRIVATE_H
 
-#ifndef STK_CONFIG_H
-#define STK_CONFIG_H
 
- /*Options: AHB_DEVIDED_BY_8
-            AHB */
-#define MSTK_CLK_SOURCE             AHB_DEVIDED_BY_8
 
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_INTERRUPT              DISABLE
+typedef struct
+{
+    volatile u32 CR1;
+    volatile u32 CR2;
+    volatile u32 SR;
+    volatile u32 DR;
+    volatile u32 CRCPR;
+    volatile u32 RXCRCR;
+    volatile u32 TXCRCR;
+    volatile u32 I2SCFGR;
+    volatile u32 I2SPR;
+}SPI_t;
 
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_ENABLE                 ENABLE
+
+#define     SPI1         ((volatile SPI_t *)0x40013000)
 
 
 #endif

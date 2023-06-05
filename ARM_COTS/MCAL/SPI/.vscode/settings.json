@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "std_types.h": "c",
+        "spi_interface.h": "c",
+        "spi_config.h": "c"
+    }
+}

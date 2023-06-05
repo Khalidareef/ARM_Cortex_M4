@@ -1,31 +1,24 @@
 /*****************************************************************************************
  * Author:				Khalid A. Mohamad
- * Creation Data:		11 May, 2023
+ * Creation Data:		4 Jun, 2023
  * Version:				v1.0
  * Compiler:			GNU ARM-GCC
  * Controller:			STM32F401CCU6 (32-bit Architecture)
  * Processor:			Cortex M4 (32-bit Architecture)
- * Layer:				MCAL Layer
+ * Layer:				HAL Layer
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v1.0		  4 Jun, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
 
-#ifndef STK_CONFIG_H
-#define STK_CONFIG_H
 
- /*Options: AHB_DEVIDED_BY_8
-            AHB */
-#define MSTK_CLK_SOURCE             AHB_DEVIDED_BY_8
+#ifndef TFT_INTERFACE_H
+#define TFT_INTERFACE_H
 
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_INTERRUPT              DISABLE
+void HTFT_voidInit(void);
 
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_ENABLE                 ENABLE
-
+void HTFT_voidDisplayImage(u16 * Copy_pu16Image);
+void HTFT_voidSetWindow(u8 Copy_u8X0, u8 Copy_u8X1, u8 Copy_u8Y0, u8 Copy_u8Y1);
 
 #endif

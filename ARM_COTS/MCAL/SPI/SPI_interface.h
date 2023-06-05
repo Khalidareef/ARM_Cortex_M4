@@ -1,6 +1,6 @@
 /*****************************************************************************************
  * Author:				Khalid A. Mohamad
- * Creation Data:		11 May, 2023
+ * Creation Data:		4 Jun, 2023
  * Version:				v1.0
  * Compiler:			GNU ARM-GCC
  * Controller:			STM32F401CCU6 (32-bit Architecture)
@@ -9,23 +9,12 @@
  *****************************************************************************************/
 /*****************************************************************************************
  * Version	  Date				  Author				  Description
- * v2.0		  27 May, 2023	Khalid A. Mohamad		  Initial Creation
+ * v1.0		  4 May, 2023	Khalid A. Mohamad		  Initial Creation
  *****************************************************************************************/
+#ifndef SPI_INTERFACE_H
+#define SPI_INTERFACE_H
 
-#ifndef STK_CONFIG_H
-#define STK_CONFIG_H
-
- /*Options: AHB_DEVIDED_BY_8
-            AHB */
-#define MSTK_CLK_SOURCE             AHB_DEVIDED_BY_8
-
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_INTERRUPT              DISABLE
-
-/*Options:  ENABLE
-            DISABLE*/
-#define MSTK_ENABLE                 ENABLE
-
+void MSPI1_voidInit(void);
+u8 MSPI_u8TrancieveSynchronous(u8 Copy_u8Data, u8 * Copy_pu8ReceivedData);
 
 #endif

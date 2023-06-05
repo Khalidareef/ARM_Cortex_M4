@@ -40,9 +40,9 @@
 #define PIN14                        14
 #define PIN15                        15 
 /*Pin Mode Macros*/
-#define MGPIO_INPUT_MODE             0b00
-#define MGPIO_OUTPUT_MODE            0b01
-#define MGPIO_ALT_FUNC_MODE          0b10
+#define MGPIO_INPUT		             0b00
+#define MGPIO_OUTPUT           		 0b01
+#define MGPIO_AF			         0b10
 #define MGPIO_ANALOG_MODE            0b11
 /*Pin Output Types Macros*/
 #define MGPIO_PUSH_PULL              0
@@ -60,6 +60,10 @@
 #define MGPIO_OUTPUT_HIGH            1
 #define MGPIO_OUTPUT_LOW             0
 
+#define MGPIO_AF07     0b0111
+#define MGPIO_AF05     0b0101
+
+
 void MGPIO_voidSetPinMode(u8 Copy_u8PortName, u8 Copy_u8PinNumber, u8 Copy_u8PinMode);
 void MGPIO_voidSetPinOutputType(u8 Copy_u8PortName, u8 Copy_u8PinNumber, u8 Copy_u8OutputType);
 void MGPIO_voidSetPinOutputSpeed(u8 Copy_u8PortName, u8 Copy_u8PinNumber, u8 Copy_u8OutputSpeed);
@@ -68,5 +72,5 @@ u8 MGPIO_voidGetPinValue(u8 Copy_u8PortName, u8 Copy_u8PinNumber);
 void MGPIO_voidSetPinValue(u8 Copy_u8PortName, u8 Copy_u8PinNumber, u8 Copy_u8PinValue);
 void MGPIO_voidSetPortMode(u8 Copy_u8PortName, u8 Copy_u8PortModeVal);
 void MGPIO_voidSetPortValue(u8 Copy_u8PortName, u8 Copy_u8PortValue);
-
+void MGPIO_voidSetAlternative(u8 Copy_u8PortName, u8 Copy_u8PinNum, u8 Copy_u8AltNum);
 #endif

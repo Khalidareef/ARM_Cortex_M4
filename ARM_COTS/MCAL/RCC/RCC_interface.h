@@ -20,6 +20,8 @@
 #define RCC_GPIOB       1
 #define RCC_GPIOC       2
 
+#define RCC_SPI1		12
+
 void MRCC_voidInit(void);
 void MRCC_voidEnablePeripheralClock(u8 Copy_u8PerioheralBus, u8 Copy_u8erioheralID);
 void MRCC_voidDisablePeripheralClock(u8 Copy_u8PerioheralBus, u8 Copy_u8erioheralID);

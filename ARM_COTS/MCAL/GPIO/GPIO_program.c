@@ -320,3 +320,52 @@ void MGPIO_voidSetPortValue(u8 Copy_u8PortName, u8 Copy_u8PortValue)
         break;
   }    
 }
+
+
+void MGPIO_voidSetAlternative(u8 Copy_u8PortName, u8 Copy_u8PinNum, u8 Copy_u8AltNum)
+{
+    switch(Copy_u8PortName)
+    {
+        case MGPIO_PORTA:
+            if(Copy_u8PinNum <= 7)
+            {
+                GPIOA->AFRL &= ~(0b1111 << (Copy_u8PinNum * 4));
+                GPIOA->AFRL |= (Copy_u8AltNum << (Copy_u8PinNum * 4));
+            }
+
+            else if(Copy_u8PinNum <= 15)
+            {
+                GPIOA->AFRH &= ~(0b1111 << ((Copy_u8PinNum - 8) * 4));
+                GPIOA->AFRH |= (Copy_u8AltNum << ((Copy_u8PinNum - 8) * 4));
+            }
+            break;
+        
+        case MGPIO_PORTB:
+            if(Copy_u8PinNum <= 7)
+            {
+                GPIOB->AFRL &= ~(0b1111 << (Copy_u8PinNum * 4));
+                GPIOB->AFRL |= (Copy_u8AltNum << (Copy_u8PinNum * 4));
+            }
+
+            else if(Copy_u8PinNum <= 15)
+            {
+                GPIOB->AFRH &= ~(0b1111 << ((Copy_u8PinNum - 8) * 4));
+                GPIOB->AFRH |= (Copy_u8AltNum << ((Copy_u8PinNum - 8) * 4));
+            }
+            break;
+        
+        case MGPIO_PORTC:
+            if(Copy_u8PinNum <= 7)
+            {
+                GPIOC->AFRL &= ~(0b1111 << (Copy_u8PinNum * 4));
+                GPIOC->AFRL |= (Copy_u8AltNum << (Copy_u8PinNum * 4));
+            }
+
+            else if(Copy_u8PinNum <= 15)
+            {
+                GPIOC->AFRH &= ~(0b1111 << ((Copy_u8PinNum - 8) * 4));
+                GPIOC->AFRH |= (Copy_u8AltNum << ((Copy_u8PinNum - 8) * 4));
+            }
+            break;
+    }
+}
